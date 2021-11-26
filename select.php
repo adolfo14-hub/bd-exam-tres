@@ -10,10 +10,11 @@ try {
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = 'SELECT nombre, artista, fecha, productora FROM Canciones';
+    $sql = 'SELECT * FROM Canciones';
 
     foreach ($conn->query($sql) as $row) {
         
+        echo $row['id'] . " | ";
         echo $row['nombre'] . " | ";
         echo $row['artista'] . " | ";
         echo $row['fecha'] . " | ";
