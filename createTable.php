@@ -11,7 +11,8 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // sql to create table
-    $sql = "CREATE TABLE Canciones (
+    $sql = "CREATE TABLE Cancione (
+    	id INT PRIMARY KEY IDENTITY (1, 1),
         nombre VARCHAR(30) NOT NULL,
         artista VARCHAR(30) NOT NULL,
         fecha VARCHAR(4),
@@ -20,7 +21,7 @@ try {
 
     // use exec() because no results are returned
     $conn->exec($sql);
-    echo "Table Canciones created successfully";
+    echo "Table Cancione created successfully";
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
